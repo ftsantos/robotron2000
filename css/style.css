@@ -209,6 +209,50 @@ main {
     margin: 10px 0 0;
 }
 
+/****************************** Muda Cor do Robo *****/
+
+.boxcor {
+    background: rgba(0,0,0,0.6);
+    clip-path: polygon(calc(100% - 30px) 0, 100% 30px, 100% calc(100% - 30px), calc(100% - 30px) 100%, 30px 100%, 0 calc(100% - 30px), 0 30px, 30px 0);
+    border-left: 5px solid var(--main-cinza);
+    height: 50%;
+    position: relative;
+}
+
+.lista {
+    padding: 20px;
+    list-style-type: none;
+    font-size: 24px;
+    border: 4mm ridge rgba(234, 122, 11, 0.992);
+    height: 50%;
+    background: rgba(0,0,0,0.6);
+  }
+
+
+[cor="azul"] {
+    color: blue;
+  }
+  
+  [cor="vermelho"] {
+    color: red;
+  }
+  
+  [cor="branco"] {
+    color: white;
+  }
+  
+  [cor="amarelo"] {
+    color: yellow;
+  }
+  
+  [cor="rosa"] {
+    color: pink;
+  }
+  
+  [cor="preto"] {
+    color: black;
+  }
+
 @media screen and (max-width: 1600px) {
     body { 
         font-size: 14px;

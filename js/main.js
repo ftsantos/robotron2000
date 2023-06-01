@@ -69,3 +69,67 @@ function atualizaEstatistica(peca){
         elemento.textContent = parseInt(elemento.textContent) + pecas[peca][elemento.dataset.estatistica];
     });
 }
+
+// Mudar cor do Robotron 2.000
+
+const imgRobo = document.querySelector('.robo');
+
+
+imgRobo.addEventListener("click", (evento) => {
+    console.log('Clicaram no RoboTron 2.000!');
+    mostraCores(evento.target.dataset.exibido);
+});
+
+function mostraCores(exibido){
+
+    const lista = document.querySelector(".lista");
+    //console.log(lista);    
+
+    if(exibido === "sim"){
+        lista.style.visibility = "hidden";
+        imgRobo.dataset.exibido = "não"
+    }else{
+        lista.style.visibility = "visible";
+        imgRobo.dataset.exibido = "sim"
+    }
+}
+
+const listaCores = document.querySelectorAll('[cor]');
+//console.log(listaCores);
+
+listaCores.forEach((elemento) => {
+    elemento.addEventListener("click", (evento) => {
+        //manupilarDados(evento.target.textContent, evento.target.parentNode);
+        //manupilarDados(evento.target.dataset.controle, evento.target.parentNode);
+        //console.log(evento.target.parentNode);
+        console.log('Você clicou na '+ elemento.textContent);   
+        //const novoRobo = document.querySelector('#robotron') ;
+        
+        //escolheCorDoRobo(novoRobo, elemento.textContent);
+        escolheCorDoRobo(elemento.textContent);
+    });
+});
+
+function escolheCorDoRobo(corDoRobo){
+
+    const novoRobo = document.querySelector('#robotron') ;
+
+    if(corDoRobo === "Azul"){
+        novoRobo.src = "./img/robotron.png";
+    }
+    if(corDoRobo === "Vermelho"){
+        novoRobo.src = "./img/Robotron 2000 - Vermelho.png";
+    }
+    if(corDoRobo === "Branco"){
+        novoRobo.src = "./img/Robotron 2000 - Branco.png";
+    }
+    if(corDoRobo === "Amarelo"){
+        novoRobo.src = "./img/Robotron 2000 - Amarelo.png";
+    }
+    if(corDoRobo === "Rosa"){
+        novoRobo.src = "./img/Robotron 2000 - Rosa.png";
+    }
+    if(corDoRobo === "Preto"){
+        novoRobo.src = "./img/Robotron 2000 - Preto.png";
+    }
+}
